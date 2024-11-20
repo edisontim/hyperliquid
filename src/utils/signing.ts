@@ -81,7 +81,6 @@ export async function signL1Action(
   isMainnet: boolean
 ): Promise<Signature> {
   const hash = actionHash(action, activePool, nonce);
-  console.log(`hash: ${hash}`);
   const phantomAgent = constructPhantomAgent(hash, isMainnet);
   const data = {
     domain: phantomDomain,

@@ -13,7 +13,6 @@ export class HttpApi {
     rateLimiter: RateLimiter
   ) {
     this.endpoint = endpoint;
-    console.log(baseUrl);
     this.client = axios.create({
       baseURL: baseUrl,
       headers: {
