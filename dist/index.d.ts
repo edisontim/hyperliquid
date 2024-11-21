@@ -10,8 +10,8 @@ declare class RateLimiter {
     waitForToken(weight?: number): Promise<void>;
 }
 
-type Tif = 'Alo' | 'Ioc' | 'Gtc';
-type Tpsl = 'tp' | 'sl';
+type Tif = "Alo" | "Ioc" | "Gtc";
+type Tpsl = "tp" | "sl";
 type LimitOrderType = {
     tif: Tif;
 };
@@ -20,7 +20,7 @@ type TriggerOrderType = {
     isMarket: boolean;
     tpsl: Tpsl;
 };
-type Grouping = 'na' | 'normalTpsl' | 'positionTpsl';
+type Grouping = "na" | "normalTpsl" | "positionTpsl";
 type OrderType = {
     limit?: LimitOrderType;
     trigger?: TriggerOrderTypeWire;
@@ -306,6 +306,8 @@ interface SpotAssetCtx {
     markPx: string;
     midPx: string;
     prevDayPx: string;
+    circulatingSupply: number;
+    coin: string;
 }
 interface SpotMetaAndAssetCtxs {
     meta: SpotMeta;
@@ -369,7 +371,7 @@ interface ModifyWire {
     order: OrderWire;
 }
 interface ScheduleCancelAction {
-    type: 'scheduleCancel';
+    type: "scheduleCancel";
     time?: number | null;
 }
 interface Signature {
@@ -441,7 +443,7 @@ interface WsUserNonFundingLedgerUpdate {
     time: number;
     coin: string;
     usdc: string;
-    type: 'deposit' | 'withdraw' | 'transfer' | 'liquidation';
+    type: "deposit" | "withdraw" | "transfer" | "liquidation";
 }
 type WsUserNonFundingLedgerUpdates = {
     isSnapshot: boolean;

@@ -178,7 +178,6 @@ var HttpApi = class {
   rateLimiter;
   constructor(baseUrl, endpoint = "/", rateLimiter) {
     this.endpoint = endpoint;
-    console.log(baseUrl);
     this.client = axios.create({
       baseURL: baseUrl,
       headers: {
@@ -255,7 +254,6 @@ function constructPhantomAgent(hash, isMainnet) {
 }
 async function signL1Action(wallet, action, activePool, nonce, isMainnet) {
   const hash = actionHash(action, activePool, nonce);
-  console.log(`hash: ${hash}`);
   const phantomAgent = constructPhantomAgent(hash, isMainnet);
   const data = {
     domain: phantomDomain,
